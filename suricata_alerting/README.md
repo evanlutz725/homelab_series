@@ -1,5 +1,13 @@
 # Suricata Alert Monitor  
 
+## Requirements.txt
+
+It's so small that I'm just gonna tell you to do this instead of making a whole file for ONE package:
+
+pip install slack_sdk
+
+Into your local python env
+
 ## Overview  
 
 This project is a monitoring script designed to analyze Suricata logs and detect high-severity security alerts. It continuously scans the Suricata **fast.log** file for specific threat indicators and sends notifications when critical threats are detected.  
