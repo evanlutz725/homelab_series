@@ -1,0 +1,24 @@
+###JUST IN CASE YOU WANTED THE /etc/network/interfaces file
+### REMEMBER: use `ip link show` to find YOUR interaface names, becuase they're probably not this
+### and you can actually join your wifi and LAN ports together instead of having the dongle to do LAN to LAN
+
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+auto enp2s0
+iface enp2s0 inet manual
+
+auto enxc8a3627dabc9
+iface enxc8a3627dabc9 inet manual
+
+auto br0
+iface br0 inet static
+        bridge_ports enp2s0 enxc8a3627dabc9
+        bridge_fd 0
+        bridge_maxwiat 0
+        bridge_spt off
+        address 192.168.0.70
+        netmask 255.255.255.0
+        gateway 192.168.0.1
